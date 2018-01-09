@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "333666011417",
-    "firebase_url": "https://shaqsoundboard.firebaseio.com",
-    "project_id": "shaqsoundboard",
-    "storage_bucket": "shaqsoundboard.appspot.com"
+    "project_number": "438580767233",
+    "firebase_url": "https://ugandan-knuckles-soundboard.firebaseio.com",
+    "project_id": "ugandan-knuckles-soundboard",
+    "storage_bucket": "ugandan-knuckles-soundboard.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:333666011417:android:5e8b0a13054a315b",
+        "mobilesdk_app_id": "1:438580767233:android:5d413da082aaa3d5",
         "android_client_info": {
-          "package_name": "nz.isaacmercer.bigshaq"
+          "package_name": "nz.isaacmercer.knuckles"
         }
       },
       "oauth_client": [
         {
-          "client_id": "333666011417-dkk73tb3c7lagrnt099fhd12qim24oc4.apps.googleusercontent.com",
+          "client_id": "438580767233-j1st2vkvdvseg6o2p31h6g1tvlds8l8h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4FtbKbQqACDfIy_rOVkv1bVn3Iav22Wg"
+          "current_key": "AIzaSyDOJobSEeRB3xgHdOYpHuUxzcou3huZOWQ"
         }
       ],
       "services": {

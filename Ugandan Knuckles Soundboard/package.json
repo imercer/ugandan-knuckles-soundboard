@@ -1,7 +1,7 @@
 {
-  "name": "nz.isaacmercer.bigshaq",
+  "name": "nz.isaacmercer.knuckles",
   "version": "1.0.0",
-  "displayName": "Big Shaq Soundboard",
+  "displayName": "Ugandan Knuckles Soundboard",
   "cordova": {
     "platforms": [
       "browser",

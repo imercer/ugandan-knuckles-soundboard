@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>333666011417-229t4ir1e51eliopqs494o4a6905h00v.apps.googleusercontent.com</string>
+	<string>438580767233-94fpash53s9t3g356mi5d5jumioui2pb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.333666011417-229t4ir1e51eliopqs494o4a6905h00v</string>
+	<string>com.googleusercontent.apps.438580767233-94fpash53s9t3g356mi5d5jumioui2pb</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC5-IWKYkHE7BUiZn6WcFyoROuQ9sOSEpo</string>
+	<string>AIzaSyADS4qMoUFbuD5DL1QIiKdMjs5zCvXp7wE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>333666011417</string>
+	<string>438580767233</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>nz.isaacmercer.bigshaq</string>
+	<string>nz.isaacmercer.knuckles</string>
 	<key>PROJECT_ID</key>
-	<string>shaqsoundboard</string>
+	<string>ugandan-knuckles-soundboard</string>
 	<key>STORAGE_BUCKET</key>
-	<string>shaqsoundboard.appspot.com</string>
+	<string>ugandan-knuckles-soundboard.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:333666011417:ios:5e8b0a13054a315b</string>
+	<string>1:438580767233:ios:5d413da082aaa3d5</string>
 	<key>DATABASE_URL</key>
-	<string>https://shaqsoundboard.firebaseio.com</string>
+	<string>https://ugandan-knuckles-soundboard.firebaseio.com</string>
 </dict>
 </plist>
