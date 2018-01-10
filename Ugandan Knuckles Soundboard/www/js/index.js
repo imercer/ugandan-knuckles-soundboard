@@ -1,4 +1,4 @@
-var soundsArray = ["soundmp3","soundmp3b"]; //TODO: ADD ALL SOUNDS TO THIS ARRAY TO ENSURE THE SHUFFLE FEATURE WORKS
+var soundsArray = ["2018inuganda","areyouthequeen","backtouganda","clicking","donotknowtheway","doyouknowtheway","escapethedevil","iamthecaptainnow","itsnevergayifitisinzimbabwe","learntheway","lostwithoutpurpose","mybrothers","myqueen","notfromuganda","nothequeen","ohmygod","rebelwithoutcause","screaming","showustheway","silence","smelllikeebola","spitting","thequeenhasfoundtheway","thisistheway","wemustreturntouganda","whereisthecommander","whyareyourunning"]; //TODO: ADD ALL SOUNDS TO THIS ARRAY TO ENSURE THE SHUFFLE FEATURE WORKS
 var displayAds;
 
 var soundsplayed = 0;
@@ -60,18 +60,18 @@ if (adsIAPpurchased) {
     var admobid = {};
     if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5706099041', //TODO: CHANGE THIS TO THE NEW APP's BANNER ID
-        interstitial: 'ca-app-pub-5354491797983322/6572334447' //TODO: CHANGE THIS TO THE NEW APP's INTERSTERTIAL ID
+        banner: 'ca-app-pub-5354491797983322/4887415709', //TODO: CHANGE THIS TO THE NEW APP's BANNER ID
+        interstitial: 'ca-app-pub-5354491797983322/4799075357' //TODO: CHANGE THIS TO THE NEW APP's INTERSTERTIAL ID
       };
     } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5706099041', //TODO: CHANGE THIS TO THE NEW APP's BANNER ID - iOS
-        interstitial: 'ca-app-pub-5354491797983322/6572334447' //TODO: CHANGE THIS TO THE NEW APP's INTERSTERTIAL ID -iOS
+        banner: 'ca-app-pub-5354491797983322/4887415709', //TODO: CHANGE THIS TO THE NEW APP's BANNER ID - iOS
+        interstitial: 'ca-app-pub-5354491797983322/4799075357' //TODO: CHANGE THIS TO THE NEW APP's INTERSTERTIAL ID -iOS
       };
     } else { // for windows phone NOT SUPPORTED
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5706099041', 
-        interstitial: 'ca-app-pub-5354491797983322/6572334447'
+        banner: 'ca-app-pub-5354491797983322/4887415709', 
+        interstitial: 'ca-app-pub-5354491797983322/4799075357'
       };
     }
 
@@ -279,7 +279,6 @@ function displayElement(element) {
 function displayAll() {
     document.getElementById('all').style.display = "block";
     document.getElementById('favbody').style.display = "block";
-    $('.CATEGORY').show(); //TODO: COPY AND CHANGE FOR ALL THE CATEGORIES
 	document.getElementById('homelists').style.display = "block";
     document.getElementById('selection').style.display = "none";
     document.getElementById('hideadsscreen').style.display = "none";
@@ -311,14 +310,14 @@ function displayHideAds() {
 function purchaseHideAds() {
     cordova.plugins.firebase.analytics.logEvent("IAPPurchaseRequested");
     inAppPurchase
-      .buy('nz.isaacmercer.soundboard.noads') //TODO: CHANGE THIS TO THE APP PACKAGE NAME
+      .buy('nz.isaacmercer.knuckles.noads') //TODO: CHANGE THIS TO THE APP PACKAGE NAME
       .then(function (data) {
         console.log(data);
            displayAds = "no";
            AdMob.removeBanner();
             cordova.plugins.firebase.analytics.logEvent("IAPPurchaseSuccess");
           localStorage.setItem('hideAdsPurchased', data.transactionId);
-          var IAPsuccessdialogtxt = "<h5>All Done!</h5>You've successfully purchased the Hide Ads add-on for Soundboard. You may need to restart the app for the changes to be made and all the ads to stop displaying. Thank you for your support."; //TODO: CHANGE THIS TO INCLUDE THE SOUNDBOARD NAME
+          var IAPsuccessdialogtxt = "<h5>All Done!</h5>You've successfully purchased the Hide Ads add-on for Ugandan Knuckles Soundboard. You may need to restart the app for the changes to be made and all the ads to stop displaying. Thank you for your support."; //TODO: CHANGE THIS TO INCLUDE THE SOUNDBOARD NAME
           IAPsuccessdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
           document.getElementById('dialog').innerHTML = IAPsuccessdialogtxt;
           cordova.plugins.firebase.analytics.setUserProperty("IAP_TransactionID", data.transactionId);
@@ -377,7 +376,6 @@ var allbuttons = "<div class=\"row\">";
 function finaliseRows() {
 	//TODO: ADD GROUPS HERE
 	allbuttons += document.getElementById('grouptitle').innerHTML;
-	allbuttons += document.getElementById('grouptitleB').innerHTML;
 	allbuttons += "</div>"
   	document.getElementById('selection').innerHTML = allbuttons;
 	document.getElementById('selection').style.display = "none";
@@ -398,7 +396,7 @@ function ringtoneSet(sound,setting) {
     } else {
         AdMob.showInterstitial();
         AdMob.prepareInterstitial({
-                adId: 'ca-app-pub-5354491797983322/6572334447', //TODO: SET THIS TO INTERSTERTIAL AD ID
+                adId: 'ca-app-pub-5354491797983322/4799075357', //TODO: SET THIS TO INTERSTERTIAL AD ID
                 autoShow: false
             });
     };

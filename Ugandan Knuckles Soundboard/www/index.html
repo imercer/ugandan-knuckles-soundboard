@@ -48,32 +48,30 @@ www FOLDER IS FOR APP DISPLAY FEATURES ONLY
         }
     </style>
 </head>
-<body id="body" style="display: none">
+<body id="body" style="display: block">
 <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="app">
-    <header class="mdl-layout__header" style="background-color: black">
+    <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">Soundboard</span><!-- TODO: Change this to include the name of the app-->
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
-            <a onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink', {origin: 'header'});window.plugins.socialsharing.share('Check out this cool app, Soundboard, on Google Play.', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.soundboard')"><i class="material-icons">share</i></a><!-- TODO: Change this to include the share description text and the URL of the app on Google Play -->
+            <a onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink', {origin: 'header'});window.plugins.socialsharing.share('I know the way! Check out this cool app, Ugandan Knuckles Soundboard, on Google Play.', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.knuckles')"><i class="material-icons">share</i></a><!-- TODO: Change this to include the share description text and the URL of the app on Google Play -->
             <a onclick="playRandomSound()"><i class="material-icons">shuffle</i></a>
             <!-- Navigation. We hide it in small screens. -->
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title" onclick="displayAll()">Soundboard</span>
+        <span class="mdl-layout-title" onClick="displayAll()">Soundboard</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" onclick="displayAll()">Home</a>
             <a class="mdl-navigation__link" onclick="menudisplayFavourites()">Favourites</a>
 			<!-- TODO: Insert Categories Here -->
-            <a class="mdl-navigation__link" onclick="displayElement('category')">Category</a>
             <br><br>
             <a class="mdl-navigation__link" onclick="displayHideAds();">Hide Ads</a>
-            <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('googleplayreview');" href="market://details?id=nz.isaacmercer.soundboard">Review on Google Play</a><!-- TODO: Insert the package name of the app -->
-            <a class="mdl-navigation__link" href="mailto:soundboardemail@isaacscomputertips.com?subject=Soundboard - Sound Suggestion" onclick="cordova.plugins.firebase.analytics.logEvent('suggestionemail');">Suggest a Sound</a> <!-- TODO: Add the suggestion email address and change the subject text -->
-            <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink',{origin: 'navmenu'});window.plugins.socialsharing.share('Check out this cool app, Soundboard, on Google Play.', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.soundboard')">Share the App</a><!-- TODO: Change this to include the share description text and the URL of the app on Google Play -->
+            <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('googleplayreview');" href="market://details?id=nz.isaacmercer.knuckles">Review on Google Play</a><!-- TODO: Insert the package name of the app -->
+            <a class="mdl-navigation__link" href="mailto:soundboardemail@isaacscomputertips.com?subject=Knuckles Soundboard - Sound Suggestion" onclick="cordova.plugins.firebase.analytics.logEvent('suggestionemail');">Suggest a Sound</a> <!-- TODO: Add the suggestion email address and change the subject text -->
+            <a class="mdl-navigation__link" onclick="cordova.plugins.firebase.analytics.logEvent('shareapplink',{origin: 'navmenu'});window.plugins.socialsharing.share('I know the way! Check out this cool app, Ugandan Knuckles Soundboard, on Google Play.', null, null, 'https://play.google.com/store/apps/details?id=nz.isaacmercer.knuckles')">Share the App</a><!-- TODO: Change this to include the share description text and the URL of the app on Google Play -->
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -88,27 +86,171 @@ www FOLDER IS FOR APP DISPLAY FEATURES ONLY
             </div>
             <div class="container" id="all">
 			<div id="homelists">
-			<div class="divider"><br><h5>GROUP TITLE</h5></div> <!-- TODO: set to group title -->
+			<!--<div class="divider"><br><h5>GROUP TITLE</h5></div> <!-- TODO: set to group title -->
             <div class="row" id="grouptitle"> <!-- TODO: set group title as ID -->
 				<!-- TODO: COPY AND REPEAT FOR ALL SOUNDS -->
-				<div class="col CATEGORY" ontouchstart="touchStart('soundmp3');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','soundmp3');"> <!-- TODO: Add category to class, add the mp3 file names -->
+				<div class="col" ontouchstart="touchStart('doyouknowtheway');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','doyouknowtheway');"> <!-- TODO: Add category to class, add the mp3 file names -->
 					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
 						<i class="material-icons">audiotrack</i>
 					</button>
-					<span class="soundboard-label" id="soundmp3label"><br>Sound Display Name</span> <!-- TODO: Change the ID of this label to include the mp3 file name and set display name-->
+					<span class="soundboard-label" id="doyouknowthewaylabel"><br>Do you know the way?</span> 
                 </div>
-			<!--TODO: REPEAT FOR FOLLOWING CATEGORIES -->
-			</div><div class="divider">
-			<hr>
-			<br><h5>GROUP TITLE 2</h5></div> <!-- TODO: set to group title -->
-            <div class="row" id="grouptitleB"> <!-- TODO: Set group title as ID -->
-				<div class="col CATEGORY" ontouchstart="touchStart('soundmp3b');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','soundmp3b');"><!-- TODO: Add category to class, add the mp3 file names -->
-                    <button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
-                        <i class="material-icons">audiotrack</i>
-                    </button>
-                    <span class="soundboard-label" id="soundmp3blabel"><br>Sound B Display Name</span> <!-- TODO: Change the ID of this label to include the mp3 file name and set display name-->
+				<div class="col" ontouchstart="touchStart('donotknowtheway');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','donotknowtheway');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="donotknowthewaylabel"><br>You do not know the way</span> 
                 </div>
-			</div>
+				<div class="col" ontouchstart="touchStart('clicking');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','clicking');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="clickinglabel"><br>Clicking</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('showustheway');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','showustheway');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="showusthewaylabel"><br>Show us the way</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('thisistheway');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','thisistheway');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="thisisthewaylabel"><br>This is the way</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('whyareyourunning');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','whyareyourunning');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="whyareyourunninglabel"><br>Why are you running</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('2018inuganda');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','2018inuganda');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="2018inugandalabel"><br>2018 in Uganda</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('areyouthequeen');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','areyouthequeen');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="areyouthequeenlabel"><br>Are you the queen?</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('backtouganda');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','backtouganda');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="backtougandalabel"><br>We must go back to Uganda</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('escapethedevil');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','escapethedevil');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="escapethedevillabel"><br>You cannot escape the devil</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('iamthecaptainnow');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','iamthecaptainnow');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="iamthecaptainnowlabel"><br>I am the captain now</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('learntheway');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','learntheway');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="learnthewaylabel"><br>You need to learn the way</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('lostwithoutpurpose');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','lostwithoutpurpose');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="lostwithoutpurposelabel"><br>I am lost without purpose</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('itsnevergayifitisinzimbabwe');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','itsnevergayifitisinzimbabwe');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="itsnevergayifitisinzimbabwelabel"><br>It's never gay if it is in Zimbabwe</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('mybrothers');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','mybrothers');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="mybrotherslabel"><br>My brother</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('myqueen');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','myqueen');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="myqueenlabel"><br>My Queen</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('notfromuganda');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','notfromuganda');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="notfromugandalabel"><br>You are not from Uganda</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('nothequeen');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','nothequeen');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="nothequeenlabel"><br>You are not the queen</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('ohmygod');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','ohmygod');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="ohmygodlabel"><br>Oh my god</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('rebelwithoutcause');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','rebelwithoutcause');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="rebelwithoutcauselabel"><br>I am a rebel without a cause</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('screaming');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','screaming');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="screaminglabel"><br>Screaming</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('silence');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','silence');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="silencelabel"><br>Silence you fools</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('smelllikeebola');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','smelllikeebola');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="smelllikeebolalabel"><br>You smell like ebola</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('spitting');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','spitting');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="spittinglabel"><br>Spitting</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('thequeenhasfoundtheway');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','thequeenhasfoundtheway');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="thequeenhasfoundthewaylabel"><br>The queen has found the way</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('wemustreturntouganda');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','wemustreturntouganda');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="wemustreturntougandalabel"><br>We must return to Uganda</span> 
+                </div>
+				<div class="col" ontouchstart="touchStart('whereisthecommander');" ontouchmove="clearTimeout(pressTimer);" ontouchcancel="clearTimeout(pressTimer);" onclick="playSound('list','whereisthecommander');"> <!-- TODO: Add category to class, add the mp3 file names -->
+					<button class="mdl-button mdl-js-button mdl-button--fab  mdl-button--colored">
+						<i class="material-icons">audiotrack</i>
+					</button>
+					<span class="soundboard-label" id="whereisthecommanderlabel"><br>Where is the commander?</span> 
+                </div>
 			<div id="selection" display="none">
 				<div class="row">
 				</div>
@@ -116,7 +258,7 @@ www FOLDER IS FOR APP DISPLAY FEATURES ONLY
         </div>
         <div id="hideadsscreen" style="display: none; text-align: center">
             <br>
-            <h3>Hide ads in Soundboard <!-- TODO: Insert Soundboard Name --> for only <span id="currencyString">USD</span><span id="priceindecimalString">$0.99</span>. </h3>
+            <h3>Hide ads in Ugandan Knuckles Soundboard <!-- TODO: Insert Soundboard Name --> for only <span id="currencyString">USD</span><span id="priceindecimalString">$0.99</span>. </h3>
             <br>
             <span id="description"></span>
             <br><br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="purchaseHideAds()">Buy Now</button>
