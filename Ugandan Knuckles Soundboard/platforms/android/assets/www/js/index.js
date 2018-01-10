@@ -1,4 +1,4 @@
-var soundsArray = ["bigshaq","boom","2plus2","minus1thats3","1234","mandobigmafs","eforexcellent","eldickhead","hisdadsadinnerlady","holdtightasznee","putmenexttothesun","ivegotthesauce","mandontstartbiff","mansgotblueeyes","thesunshotterthanme","mansnothot","mansnotdumb","mybrudda","ilikemyfantawithnohaice","noketchup","mansgotsauce","youdontforcethesauce","askanegghowdoyouhaveyouryolk","papakakaka","quackquackquack","youmanwereducking","quickmafs","manknowsalgebra","pythagoroustheorem","rawsauce","skidipipapa","skrrrrrra","skyaaa","put-put-put-boom","poompoom","tu-tu-tu-qum-poom-boom","lookatyournose","thetinggoesfull","takeoffyourjacket","thatgirlisauckers","thetinggoes","whosdat","yadunknow","youdickhead","yourequitescintilating","givemeyournumber","idonttakeoffmyjacket","yougetme","squadededup","theowlgoesprrttt","youknowlikethat","mansgotbars","asznee","mybrothers","intillectualisilyintelligent","thesundidnotshine","makeanep","sufficishent","englishlesson","itcomesvertic","hoptscotchting","youregivingmeamigrane","butterflywasp","mansnothotboxing","linkup","cmonbruv","englishlanguage","islandrecords","ileland","mandontmakemelooklikeidontknowenglish","bigenglish","englishidnotreallymystrongestsubject","mansready","amplificication","youreprotecteded","causetheconspic","donttrytoincriminateme","checkthestatistics","persperationting","lynxeffect","imnothot","ossnaa","ratnum","scootnum","mansinmancachester","skrrrpopop","theforceiswithyou","theprintermadeanerror","everythingsdeadimalive","howmuchwoodwouldawoodchuckchuck","howcanyoubefromapepper","thestatistacsismad","buymeatwix","yobabes","fireinthebooth","mancanneverbehot","dadis44","noselonglikegardenhose","mansonthsblock","smoketrees","quickmathsfull","condensationcon","getthelate","indadequate","justsaucenoketchup","yeahyeah","youdontknoweverything","youwanttostartbiff","cutherecording","bigman","hahaha","hedgehogsong","illbeequaltotheequator","itsnotamathematicalsong","manknowstrigonometry","manknowstrigonometryalgebrageography","wheresyourgrammaticalgrammars","youtwit","youresayingitlikeaturkishdon","whydidntyouinformme","babesmansnothotfull","dformaths","aintern","baabaablacksheep","beeninsomepredictaments","bigmanyourecrap","crayolastory","dickheadyouth","gabrieljesus","getbetteratyourcarrer","haters","ifyouseethemouse","lockoffthecamera","mansinternationalnow","manspeaksastrinomicalenglish","smokingtoomuchtrees","thebursmentscomingthrough","tinggoespow","xmasfreestyle","yourefired"];
+var soundsArray = ["2018inuganda","areyouthequeen","backtouganda","clicking","donotknowtheway","doyouknowtheway","escapethedevil","iamthecaptainnow","itsnevergayifitisinzimbabwe","learntheway","lostwithoutpurpose","mybrothers","myqueen","notfromuganda","nothequeen","ohmygod","rebelwithoutcause","screaming","showustheway","silence","smelllikeebola","spitting","thequeenhasfoundtheway","thisistheway","wemustreturntouganda","whereisthecommander","whyareyourunning"]; //TODO: ADD ALL SOUNDS TO THIS ARRAY TO ENSURE THE SHUFFLE FEATURE WORKS
 var displayAds;
 
 var soundsplayed = 0;
@@ -60,18 +60,18 @@ if (adsIAPpurchased) {
     var admobid = {};
     if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5706099041', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-5354491797983322/6572334447'
+        banner: 'ca-app-pub-5354491797983322/4887415709', //TODO: CHANGE THIS TO THE NEW APP's BANNER ID
+        interstitial: 'ca-app-pub-5354491797983322/4799075357' //TODO: CHANGE THIS TO THE NEW APP's INTERSTERTIAL ID
       };
     } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5706099041', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-5354491797983322/6572334447'
+        banner: 'ca-app-pub-5354491797983322/4887415709', //TODO: CHANGE THIS TO THE NEW APP's BANNER ID - iOS
+        interstitial: 'ca-app-pub-5354491797983322/4799075357' //TODO: CHANGE THIS TO THE NEW APP's INTERSTERTIAL ID -iOS
       };
-    } else { // for windows phone
+    } else { // for windows phone NOT SUPPORTED
       admobid = {
-        banner: 'ca-app-pub-5354491797983322/5706099041', // or DFP format "/6253334/dfp_example_ad"
-        interstitial: 'ca-app-pub-5354491797983322/6572334447'
+        banner: 'ca-app-pub-5354491797983322/4887415709', 
+        interstitial: 'ca-app-pub-5354491797983322/4799075357'
       };
     }
 
@@ -110,11 +110,7 @@ var displayshareprompt = localStorage.getItem("shareprompt");
 var displayprompt = localStorage.getItem("favprompt");
 var favlabel;
 function loadFavourites() {
-if (!displayshareprompt) {
-    if (!storedfavourites) {
-        storedfavourites = [];
-    }
-} else if (storedfavourites) {
+if (storedfavourites) {
     var favbody = "<div class=\"container\"><div class=\"row\">";
     storedfavourites.forEach(function(favourite) {
           console.log(favourite);
@@ -124,12 +120,9 @@ if (!displayshareprompt) {
     favbody += "</div></div>";
   document.getElementById('favbody').innerHTML = favbody;
   document.getElementById('favbody').style.display = "block";
-} else if (displayprompt) {
-    storedfavourites = [];
-    document.getElementById('favbody').style.display = "none";
 } else {
     storedfavourites = [];
-    document.getElementById('favprompt').style.display = "none";
+    //document.getElementById('favprompt').style.display = "none";
   }
 
 };
@@ -251,19 +244,6 @@ function audioPlayer(audio) {
 }
 function playSound(origin,audio) {
     clearTimeout(pressTimer);
-    /*window.plugins.NativeAudio.play(audio,function(){console.log('playing' + audio);},function(msg){console.log('error playing back' + audio + msg);},function(){console.log('completed playing back' + audio);});
-
-
-    soundsplayed = soundsplayed + 1;
-    if (soundsplayed == 10) {
-        document.getElementById("waitalert").style.display = "block";
-        unloadAll();
-        loadAll();
-        setTimeout(function(){
-                 document.getElementById("waitalert").style.display = "none";
-        }, 5000);
-        soundsplayed = 0;
-    }*/
     audioPlayer(audio);
     cordova.plugins.firebase.analytics.logEvent("sound_played", {sound: audio, origin: origin});
 };
@@ -281,31 +261,17 @@ function displayElement(element) {
     console.log("Showing element " + element);
     document.getElementById('all').style.display = "block";
     document.getElementById('favbody').style.display = "none";
-    $('.english').hide();
-    $('.maths').hide();
-    $('.song').hide();
-    $('.sayings').hide();
-	$('.divider').hide();
+    $('.CATEGORY-tohide').hide(); //TODO: COUPY AND CHANGE FOR ALL THE CATEGORIES
 	document.getElementById('homelists').style.display = "none";
     document.getElementById('selection').style.display = "block";
     $('.' + element + '').show();
     cordova.plugins.firebase.analytics.setCurrentScreen(element);
     document.getElementById('app').MaterialLayout.toggleDrawer();
-    /*AdMob.showInterstitial();
-    AdMob.prepareInterstitial({
-        adId: 'ca-app-pub-5354491797983322/6572334447',
-        autoShow: false
-    });*/
 }
 
 function displayAll() {
     document.getElementById('all').style.display = "block";
     document.getElementById('favbody').style.display = "block";
-    $('.english').show();
-    $('.maths').show();
-    $('.song').show();
-    $('.sayings').show();
-	$('.divider').show();
 	document.getElementById('homelists').style.display = "block";
     document.getElementById('selection').style.display = "none";
     document.getElementById('hideadsscreen').style.display = "none";
@@ -320,7 +286,7 @@ function displayHideAds() {
     document.getElementById('hideadsscreen').style.display = "block";
     document.getElementById('app').MaterialLayout.toggleDrawer();
     inAppPurchase
-      .getProducts(['nz.isaacmercer.bigshaq.noads'])
+      .getProducts(['nz.isaacmercer.knuckles.noads'])
       .then(function (products) {
         console.log(products);
         document.getElementById('currencyString').innerHTML = products[0].currency;
@@ -337,14 +303,14 @@ function displayHideAds() {
 function purchaseHideAds() {
     cordova.plugins.firebase.analytics.logEvent("IAPPurchaseRequested");
     inAppPurchase
-      .buy('nz.isaacmercer.bigshaq.noads')
+      .buy('nz.isaacmercer.knuckles.noads') //TODO: CHANGE THIS TO THE APP PACKAGE NAME
       .then(function (data) {
         console.log(data);
            displayAds = "no";
            AdMob.removeBanner();
             cordova.plugins.firebase.analytics.logEvent("IAPPurchaseSuccess");
           localStorage.setItem('hideAdsPurchased', data.transactionId);
-          var IAPsuccessdialogtxt = "<h5>All Done!</h5>You've successfully purchased the Hide Ads add-on for Big Shaq Soundboard. You may need to restart the app for the changes to be made and all the ads to stop displaying. Thank you for your support.";
+          var IAPsuccessdialogtxt = "<h5>All Done!</h5>You've successfully purchased the Hide Ads add-on for Ugandan Knuckles Soundboard. You may need to restart the app for the changes to be made and all the ads to stop displaying. Thank you for your support."; //TODO: CHANGE THIS TO INCLUDE THE SOUNDBOARD NAME
           IAPsuccessdialogtxt += "<br><br><br><br<br><button class=\"mdl-button mdl-js-button mdl-button--raised mdl-button--accent\" onclick=\"closeDialog()\">Close</button>";
           document.getElementById('dialog').innerHTML = IAPsuccessdialogtxt;
           cordova.plugins.firebase.analytics.setUserProperty("IAP_TransactionID", data.transactionId);
@@ -401,14 +367,8 @@ function menudisplayFavourites() {
 
 var allbuttons = "<div class=\"row\">";
 function finaliseRows() {
-	allbuttons += document.getElementById('mansnothot').innerHTML;
-	allbuttons += document.getElementById('fireinthebooth').innerHTML;
-	allbuttons += document.getElementById('genius').innerHTML;
-	allbuttons += document.getElementById('capitalextra').innerHTML;
-	allbuttons += document.getElementById('swil').innerHTML;
-	allbuttons += document.getElementById('breakfast').innerHTML;
-	allbuttons += document.getElementById('instagram').innerHTML;
-	allbuttons += document.getElementById('remaining').innerHTML;
+	//TODO: ADD GROUPS HERE
+	allbuttons += document.getElementById('grouptitle').innerHTML;
 	allbuttons += "</div>"
   	document.getElementById('selection').innerHTML = allbuttons;
 	document.getElementById('selection').style.display = "none";
@@ -429,7 +389,7 @@ function ringtoneSet(sound,setting) {
     } else {
         AdMob.showInterstitial();
         AdMob.prepareInterstitial({
-                adId: 'ca-app-pub-5354491797983322/6572334447',
+                adId: 'ca-app-pub-5354491797983322/4799075357', //TODO: SET THIS TO INTERSTERTIAL AD ID
                 autoShow: false
             });
     };

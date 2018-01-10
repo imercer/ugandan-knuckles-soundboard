@@ -66,7 +66,6 @@
 		01A40BAC58D64BBE9FADFE52 /* NativeSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C318FBE0A424BEE90E5A8B9 /* NativeSettings.m */; };
 		9AE70256D6ED4D6FB96ED1B8 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EEF6E0D71B374FDA95541668 /* RMStore.m */; };
 		A88891F052F84A11862CAEAF /* PaymentsPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */; };
-		2B430032AD9043AF87C09211 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5A9B859EFCD46FFAB8BCDA6 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,7 +195,6 @@
 		D64892D0AF2E4573A1EB8AA5 /* PaymentsPlugin.m */ = {isa = PBXFileReference; name = "PaymentsPlugin.m"; path = "cordova-plugin-inapppurchase/PaymentsPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		23F636392B8549D5BDF36575 /* RMStore.h */ = {isa = PBXFileReference; name = "RMStore.h"; path = "cordova-plugin-inapppurchase/RMStore.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		A7793F48F15B4994994D84AB /* PaymentsPlugin.h */ = {isa = PBXFileReference; name = "PaymentsPlugin.h"; path = "cordova-plugin-inapppurchase/PaymentsPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		E5A9B859EFCD46FFAB8BCDA6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,7 +291,6 @@
 				8D1107310486CEB800E47090 /* Big Shaq-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
 				EB07CA8DDE534FA0BB4C41BB /* CDVNotification.bundle */,
-				E5A9B859EFCD46FFAB8BCDA6 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			path = "Big Shaq/Resources";
@@ -512,7 +509,6 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 				D285620484404D9F9E27AC9B /* CDVNotification.bundle in Resources */,
-				2B430032AD9043AF87C09211 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

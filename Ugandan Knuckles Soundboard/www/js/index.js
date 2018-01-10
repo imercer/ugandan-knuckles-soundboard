@@ -110,11 +110,7 @@ var displayshareprompt = localStorage.getItem("shareprompt");
 var displayprompt = localStorage.getItem("favprompt");
 var favlabel;
 function loadFavourites() {
-if (!displayshareprompt) {
-    if (!storedfavourites) {
-        storedfavourites = [];
-    }
-} else if (storedfavourites) {
+if (storedfavourites) {
     var favbody = "<div class=\"container\"><div class=\"row\">";
     storedfavourites.forEach(function(favourite) {
           console.log(favourite);
@@ -124,12 +120,9 @@ if (!displayshareprompt) {
     favbody += "</div></div>";
   document.getElementById('favbody').innerHTML = favbody;
   document.getElementById('favbody').style.display = "block";
-} else if (displayprompt) {
-    storedfavourites = [];
-    document.getElementById('favbody').style.display = "none";
 } else {
     storedfavourites = [];
-    document.getElementById('favprompt').style.display = "none";
+    //document.getElementById('favprompt').style.display = "none";
   }
 
 };
@@ -293,7 +286,7 @@ function displayHideAds() {
     document.getElementById('hideadsscreen').style.display = "block";
     document.getElementById('app').MaterialLayout.toggleDrawer();
     inAppPurchase
-      .getProducts(['nz.isaacmercer.bigshaq.noads'])
+      .getProducts(['nz.isaacmercer.knuckles.noads'])
       .then(function (products) {
         console.log(products);
         document.getElementById('currencyString').innerHTML = products[0].currency;

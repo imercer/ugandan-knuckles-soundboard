@@ -1,11 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!-- config.xml 
-	SETS THE APP CONFIG AND DATA FOR MANIFEST 
-		* CHANGE AS PER TODOs 
-		* UPDATE google-services.json and GoogleService-Info.plist TO INCLUDE THE NEW FIREBASE CONFIGS
-		* ENSURE CHANGES ARE REPLICATED IN MANIFESTS
-		* ICONS ARE FOUND (AND I BELIEVED CHANEGD) in the res/icon folder
-		* SPLASH SCREENS ARE LOCATED (AND I BELEIVED CHANGED) in the res/screen -->
 <widget android-versionCode="100" id="nz.isaacmercer.knuckles" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <hook src="hooks/gradle-fix.js" type="before_prepare" />
     <name>Knuckles</name>
