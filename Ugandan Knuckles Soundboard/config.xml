@@ -14,7 +14,7 @@
     <icon src="res/icon.png" />
     <preference name="SplashScreenDelay" value="0" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#000" />
+    <preference name="StatusBarBackgroundColor" value="#f44336" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="ios">
         <preference name="Orientation" value="all" />
@@ -56,7 +56,7 @@
     </platform>
     <engine name="browser" spec="~5.0.1" />
     <engine name="android" spec="^6.3.0" />
-    <engine name="ios" spec="^4.5.3" />
+    <engine name="ios" spec="^4.5.4" />
     <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />

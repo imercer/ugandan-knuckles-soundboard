@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="136" id="nz.isaacmercer.bigshaq" version="1.3.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-versionCode="100" id="nz.isaacmercer.knuckles" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <hook src="hooks/gradle-fix.js" type="before_prepare" />
-    <name>Big Shaq</name>
+    <name>Knuckles</name>
     <description>
-        Mans not hot
+        Do you know the way
     </description>
     <author email="isaac@isaacmercer.nz" href="http://isaacmercer.nz">
         Isaac Mercer
